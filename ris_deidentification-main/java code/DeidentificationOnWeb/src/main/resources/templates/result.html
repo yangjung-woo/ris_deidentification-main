@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- 타임리프를 사용하기 위한 태그 선언 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <!-- 내부 css -->
+  <style>
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.child {
+  display: flex;
+  margin: 0.3%;
+  padding: 0.5%;
+  border: 1px solid #000000;
+}
+.header {
+  display: flex;
+  flex-grow: 1;
+  height: 3%;
+}
+.content {
+  display: flex;
+  height: 95%;
+}
+.Document {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 97%;
+}
+.tabcontent1, .tabcontent2 {
+  height: 100%;
+}
+.Doc {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  height: 80%;
+  width: 100%;
+  overflow: auto;
+}
+.scrolltbody {
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+  width: 100%;
+  height: 97%;
+}
+.scrolltbody thead {
+  display: table;
+  table-layout: fixed;
+  width: calc(100% - 17px);
+}
+
+.scrolltbody tbody {
+  display:block;
+  overflow: auto;
+  height: 100%;
+}
+.scrolltbody th, td {
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+.scrolltbody tbody tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.scrolltbody tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+  <script th:inline="javascript">
+    function back(id){
+      if(id == 'InDocument'){
+        if(idx1 > 0)
+        idx1--
+        document.getElementById(id).innerHTML=inDocumentList[idx1].document
+      }
+      if(id == 'OutDocument'){
+        if(idx2 > 0)
+        idx2--
+        document.getElementById(id).innerHTML=outDocumentList[idx2].document
+      }
+
+    }
+    function next(id){
+      if(id == 'InDocument'){
+        if(idx1 < inDocumentList.length)
+        idx1++
+        document.getElementById(id).innerHTML=inDocumentList[idx1].document
+      }
+      if(id == 'OutDocument'){
+        if(idx2 < outDocumentList.length)
+        idx2++
+        document.getElementById(id).innerHTML=outDocumentList[idx2].document
+      }
+    }
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      if(tabName == "inputtab1" || tabName== "inputtab2"){
+        tabcontent = document.getElementsByClassName("tabcontent1"); // 컨텐츠를 불러옵니다.
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none"; //컨텐츠를 모두 숨깁니다.
+        }
+        tablinks = document.getElementsByClassName("tablinks1"); //탭을 불러옵니다.
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", ""); //탭을 초기화시킵니다.
+        }
+      }
+      else{
+        tabcontent = document.getElementsByClassName("tabcontent2"); // 컨텐츠를 불러옵니다.
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none"; //컨텐츠를 모두 숨깁니다.
+        }
+        tablinks = document.getElementsByClassName("tablinks2"); //탭을 불러옵니다.
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", ""); //탭을 초기화시킵니다.
+        }
+      }
+
+      document.getElementById(tabName).style.display = "block"; //해당되는 컨텐츠만 보여줍니다.
+      evt.currentTarget.className += " active"; //클릭한 탭을 활성화시킵니다.
+    }
+  </script>
+</head>
+
+<body>
+<div class="main">
+  <div class="child header">
+    <form method="GET" th:action="@{/}">
+      <input type="submit" value="처음으로">
+    </form>
+  </div>
+  <div class="child content">
+    <div class="child content Document">
+      <h3>input</h3>
+      <div class="tab">
+        <button class="tablinks1 active" onclick="openTab(event, 'inputtab1')">Document</button>
+        <button class="tablinks1" onclick="openTab(event, 'inputtab2')">Table</button>
+      </div>
+      <div id="inputtab1" class="tabcontent1" style="display: block;">
+        <div class="Doc">
+          <xmp id="InDocument"></xmp>
+        </div>
+        <button type="botton" onclick="back('InDocument')">이전</button>
+        <button type="botton" onclick="next('InDocument')">다음</button>
+        <script th:inline="javascript">
+          var idx1 = 0;
+          var inDocumentList = [[${InDocumentList}]]
+          document.getElementById('InDocument').innerHTML=inDocumentList[idx1].document;
+        </script>
+      </div>
+      <div id="inputtab2" class="tabcontent1" style="display: none;">
+        <table class="scrolltbody">
+          <thead>
+          <tr class="fix_head">
+            <th>count</th>
+            <th th:each="tagName : ${TagNames}">
+              <span th:text="${tagName.tagName}" th:onclick="table([[${tagName}]])"></span>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="list, s : ${IntableList}">
+            <td><span th:text="${s.count}"></span></td>
+            <td th:each="idx : ${list.tag}">
+              <span th:text="${idx}"></span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="child content Document">
+      <h3>Result</h3>
+      <div class="tab">
+        <button class="tablinks2 active" onclick="openTab(event, 'outputtab1')">Document</button>
+        <button class="tablinks2" onclick="openTab(event, 'outputtab2')">Table</button>
+      </div>
+      <div id="outputtab1" class="tabcontent2" style="display: block;">
+        <div class="Doc">
+          <xmp id="OutDocument" ></xmp>
+        </div>
+        <button type="botton" onclick="back('OutDocument')">이전</button>
+        <button type="botton" onclick="next('OutDocument')">다음</button>
+        <script th:inline="javascript">
+          var idx2 = 0;
+          var outDocumentList = [[${OutDocumentList}]]
+          document.getElementById('OutDocument').innerHTML=outDocumentList[idx2].document;
+        </script>
+      </div>
+      <div id="outputtab2" class="tabcontent2" style="display: none;">
+        <table class="scrolltbody">
+          <thead>
+          <tr class="fix_head">
+            <th>count</th>
+            <th th:each="tagName : ${TagNames}">
+              <span th:text="${tagName.tagName}" th:onclick="table([[${tagName}]])"></span>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="list, s : ${OuttableList}">
+            <td><span th:text="${s.count}"></span></td>
+            <td th:each="idx : ${list.tag}">
+              <span th:text="${idx}"></span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
