@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    
+    <script type ="text/javascript">
+        function selectText(){
+            var selectionText ="";
+            if(document.getSelection){
+                selectionText = document.getSelection();
+            }
+            else if (document.selection){
+                selectionText =document.selection.createRange().text;
+            }
+            return selectionText;
+        }
+        document.onmouseup =function(){
+            document.getElementById("console").innerHTML = selectText();
+        }
+
+        // 태그 추가 
+        function makeTag_A()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<A>"
+            endTag ="</A>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_B()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<B>"
+            endTag ="</B>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_C()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<C>"
+            endTag ="</C>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_D()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<D>"
+            endTag ="</D>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_E()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<E>"
+            endTag ="</E>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_F()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<F>"
+            endTag ="</F>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_G()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<G>"
+            endTag ="</G>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_H()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<H>"
+            endTag ="</H>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_I()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<I>"
+            endTag ="</I>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_J()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<J>"
+            endTag ="</J>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+        function makeTag_K()
+        {
+
+            var sel =document.getSelection(); //선택한 영역
+            
+            frontTag ="<K>"
+            endTag ="</K>"
+            var txtArea = document.getElementById("TextArea");
+            var txtValue = txtArea.value;
+            var selectPos = txtArea.selectionStart; // 커서 위치 지정
+            var beforeTxt = txtValue.substring(0, selectPos);  // 기존텍스트 ~ 커서시작점 까지의 문자
+            var afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length);   // 커서끝지점 ~ 기존텍스트 까지의 문자
+            var addTxt = frontTag + sel + endTag;
+            txtArea.value = beforeTxt + addTxt + afterTxt;
+
+            selectPos = selectPos + addTxt.length;
+             txtArea.selectionStart = selectPos; // 커서 시작점을 추가 삽입된 텍스트 이후로 지정
+            txtArea.selectionEnd = selectPos; // 커서 끝지점을 추가 삽입된 텍스트 이후로 지정
+            txtForm.focus();
+
+        }
+
+
+        /*
+        function loadFile(){
+
+            //다음은 텍스트 파일을 첨부하면 콘솔에 내용을 출력하는 코드이다. 
+            const fileinput = document.querySelector("#fileinput");
+            fileinput.addEventListener("change",loadFile);
+
+            function loadTextFile(){
+                
+
+                var txtArea = document.getElementById("text");
+
+                const file =new FileReader();
+                file.readAsText(this.files[0]);
+
+                file.onload = () =>{
+                    const textFile = file.result;
+                    contentText.log(textFile);
+                    txtArea = files;
+                
+
+                }
+                const file = new FileReader(); // 파일 읽음자 
+                // 첨부된 파일 읽기
+                file.readAsText(this.files[0]);
+                //읽기가 완료되면 파일 내용을 Textarea에 출력 
+                file.onload = () => {
+                var txtArea = document.getElementById("TextArea");
+                const textFile = file.result;
+                txtArea.value[0] =textFile;
+                } 
+        }
+        */
+        
+            /*
+        function txt_make(){
+            var content = document.getElementById("contentText");
+            var lines = txtBox.value.split("\n");
+
+            // generate HTML version of text
+            var resultString  = "<p>";
+            for (var i = 0; i < lines.length; i++) {
+                resultString += lines[i] + "<br />";
+            }
+            resultString += "</p>";
+            var fso = new ActiveXObject('Scripting.FileSystemObject');
+            var fileObj = fso.CreateTextFile
+
+        }*/
+        function downloadFile(filename, content) {
+            // html 에 element = a 라는 요소를 추가 
+            const element = document.createElement('a');
+            //Blob(Binary Large Object, 블랍)은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용할 수 있습니다.
+            //const blob = new Blob([content], { type: 'plain/text' });
+
+             // "\ufeff" 을 추가함으로서 csv 파일로 저장시 한글 폰트가 깨지는것을 방지 
+            const blob = new Blob(["\ufeff"+content], { type: 'text;charset=utf-8;'});
+
+            // fileUrl = 파일저장 버튼 클릭시  blob 객체 저장
+            const fileUrl = URL.createObjectURL(blob);
+            // html 에 추가한 element =a 를 다운로드 버튼으로 속성 설정
+            element.setAttribute('href', fileUrl); //file location
+            element.setAttribute('download', filename); // file name
+            element.style.display = 'none'; 
+
+            //use appendChild() method to move an element from one element to another
+            document.body.appendChild(element);
+            element.click();
+
+        //The removeChild() method of the Node interface removes a child node from the DOM and returns the removed node
+            document.body.removeChild(element);
+            };
+        
+         //자바스크립트가 문서가 준비된 상황 이후에 발동하도록만 한다면 문서 앞에 선언해도 상관 없어지는데, 
+         //바로 이런 것을 해주는 것이 window.onload 메소드다
+        window.onload = () => {
+             document.getElementById('download').
+            addEventListener('click', e => {
+                        var filename = document.getElementById('filename').value;
+                        var content = document.getElementById('TextArea').value;
+
+            if (filename == ""){
+                filename = "[비식별화 Tag] 기본문서"
+            }
+            if (content == ""){
+                content = "기본값"
+            }
+
+             if (filename && content) {
+                downloadFile(filename, content);
+                }
+            }
+        
+        );
+        
+
+        };
+        
+            
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 버튼 생성 영역 -->
+        <div>
+        <input type="file" name="fileinput" id ="fileinput" value="업로드 파일 선택">
+        <input type="button" id="submit" value="업로드">
+        <br>
+        
+
+        </div>
+        <div>
+            <input type ="button" value="태그:A" onclick="makeTag_A()">
+            <input type ="button" value="태그:B" onclick="makeTag_B()">
+            <input type ="button" value="태그:C" onclick="makeTag_C()">
+            <input type ="button" value="태그:D" onclick="makeTag_D()">
+            <input type ="button" value="태그:E" onclick="makeTag_E()">
+            <input type ="button" value="태그:F" onclick="makeTag_F()">
+            <input type ="button" value="태그:G" onclick="makeTag_G()">
+            <input type ="button" value="태그:H" onclick="makeTag_H()">
+            <input type ="button" value="태그:I" onclick="makeTag_I()">
+            <input type ="button" value="태그:J" onclick="makeTag_J()">
+            <input type ="button" value="태그:K" onclick="makeTag_K()">
+            <!-- 새 탭 링크 http://[local] -->
+            <p> <a href="http://localhost:5555/web_textEditor_V3.1.html" target="_blank">새로운 TextArea 열기</a></p>
+
+
+        </div>
+        <textarea class= "target" name="Text" id="TextArea"
+        rows="50" cols="150"></textarea>   
+        
+        <br>
+        <input id ="filename" placeholder="저장할 파일명"/>
+        
+        <button id ="download">파일 저장</button>
+
+        <div id="console"></div>
+
+        <script>
+            
+        var btn = document.getElementById("submit");
+        // submit(업로드) 버튼 클릭시 동작
+        btn.addEventListener("click", function(){
+
+         var items = '';
+         var reader = new FileReader();
+         var data = document.getElementById("fileinput").files[0];
+         var curr_data 
+
+        // 읽기 동작이 완료되었을 때...
+        reader.addEventListener('load', function(){
+            // 파일 추가시 기존 파일 아래 추가 하도록 작성
+        document.getElementsByTagName("textarea")[0].value =document.getElementsByTagName("textarea")[0].value+ reader.result;
+        });
+        // 파일 읽기에 오류가 있으면..
+        reader.addEventListener('error', function(){
+        console.log(reader.error.message);
+        });
+        // 파일을 문자열로 읽어 들임
+         reader.readAsText(data);
+         curr_data = reader
+        });
+
+        </script>
+</body>
+</html>
